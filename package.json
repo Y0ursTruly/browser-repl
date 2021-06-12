@@ -24,7 +24,7 @@
     "repl": "./repl.js"
   },
   "scripts": {
-    "start": "node repl.js"
+    "start": "node repl.js",
     "prepublish": "make build"
   },
   "devDependencies": {
