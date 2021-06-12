@@ -1,17 +1,15 @@
 var io = require('socket.io-client');
-var map = require('array-map');
-var each = require('foreach');
-var toArray = require('to-array');
 var inspect = require('util-inspect');
 var socket = io();
 
+//u had 3 unneeded packages ;-;
 // make `console` remote
 if (!global.options.k) {
   global.console = {};
-  each(['log', 'info', 'warn', 'error', 'debug'], function(m){
+  ['log', 'info', 'warn', 'error', 'debug'].forEach(m=>{
     global.console[m] = function(){
-      var args = toArray(arguments);
-      socket.emit('console', m, map(args, function(a){
+      var args = [...arguments];
+      socket.emit('console', m, args.map(a=>{
         return inspect(a, { colors: true });
       }));
     };
