@@ -1,18 +1,16 @@
 {
   "name": "browser-repl",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "CLI utility to set up a remote browser repl",
+  "main": "repl.js",
   "dependencies": {
-    "array-map": "0.0.0",
-    "express": "3.4.8",
-    "foreach": "2.0.4",
-    "minimist": "0.0.7",
-    "ngrok": "0.1.99",
-    "socket.io": "1.3.5",
-    "socket.io-client": "1.3.5",
-    "to-array": "0.1.4",
-    "util-inspect": "0.1.8",
-    "wd": "0.3.11"
+    "express": "^3.4.8",
+    "minimist": "^0.0.7",
+    "ngrok": "^3.3.0",
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5",
+    "util-inspect": "^0.1.8",
+    "wd": "^0.3.11"
   },
   "repository": {
     "type": "git",
@@ -26,6 +24,7 @@
     "repl": "./repl.js"
   },
   "scripts": {
+    "start": "node repl.js"
     "prepublish": "make build"
   },
   "devDependencies": {
